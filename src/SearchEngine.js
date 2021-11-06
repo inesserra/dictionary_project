@@ -3,9 +3,10 @@ import axios from "axios";
 import "./SearchEngine.css";
 import Results from "./Results";
 
-export default function SearchEngine() {
-  let [searchWord, setSearchWord] = useState("");
+export default function SearchEngine(props) {
+  let [searchWord, setSearchWord] = useState(props.defaultWord);
   let [results, setResults] = useState(null);
+  let [loaded, setLoaded] = useState(false);
 
   function handleResponse(response) {
     console.log(response.data[0]);
@@ -25,12 +26,26 @@ export default function SearchEngine() {
     setSearchWord(event.target.value);
   }
 
-  return (
-    <div className="SearchEngine">
-      <form onSubmit={handleSubmit}>
-        <input type="search" placeholder="Enter a word" onChange={updateWord} />
-      </form>
-      <Results results={results} />
-    </div>
-  );
+  function load() {
+    setLoaded(true);
+    search();
+  }
+
+  if (loaded) {
+    return (
+      <div className="SearchEngine">
+        <form onSubmit={handleSubmit}>
+          <input
+            type="search"
+            placeholder="Enter a word"
+            onChange={updateWord}
+          />
+        </form>
+        <Results results={results} />
+      </div>
+    );
+  } else {
+    load();
+    return "Loading";
+  }
 }

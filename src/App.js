@@ -9,7 +9,7 @@ function App() {
         <header className="App-header">
           <img src={logo} className="Logo" alt="logo" />
         </header>
-        <SearchEngine />
+        <SearchEngine defaultWord="sunrise" />
         <footer>
           <a href="https://github.com/inesserra/dictionary_project">
             Open source code
