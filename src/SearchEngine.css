@@ -1,3 +1,8 @@
+.SearchEngine h1 {
+  font-size: 22px;
+  text-align: left;
+  margin: 0px 0px 10px 12.5%;
+}
 .SearchEngine input {
   width: 75%;
   padding: 8px;

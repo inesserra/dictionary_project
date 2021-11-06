@@ -9,7 +9,6 @@ export default function SearchEngine(props) {
   let [loaded, setLoaded] = useState(false);
 
   function handleResponse(response) {
-    console.log(response.data[0]);
     setResults(response.data[0]);
   }
 
@@ -35,6 +34,7 @@ export default function SearchEngine(props) {
     return (
       <div className="SearchEngine">
         <form onSubmit={handleSubmit}>
+          <h1>What do you want to search?</h1>
           <input
             type="search"
             placeholder="Enter a word"
