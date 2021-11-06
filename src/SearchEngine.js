@@ -1,28 +1,33 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./SearchEngine.css";
+import Results from "./Results";
 
 export default function SearchEngine() {
-  const [searchWord, setSearchWord] = useState("");
+  let [searchWord, setSearchWord] = useState("");
+  let [results, setResults] = useState(null);
 
   function handleResponse(response) {
     console.log(response.data[0]);
+    setResults(response.data[0]);
   }
 
   function search(event) {
-    event.preventDefault();
-  }
-
-  function updateWord(event) {
-    setSearchWord(event.target.value);
     let apiURL = `https://api.dictionaryapi.dev/api/v2/entries/en/${searchWord}`;
     axios.get(apiURL).then(handleResponse);
-    console.log(apiURL);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+  function updateWord(event) {
+    setSearchWord(event.target.value);
   }
 
   return (
     <div className="SearchEngine">
-      <form onSubmit={search}>
+      <form onSubmit={handleSubmit}>
         <input
           type="search"
           placeholder="Enter your word"
@@ -31,6 +36,7 @@ export default function SearchEngine() {
         />
         <input type="submit" value="search" className="btn btn-primary w-30" />
       </form>
+      <Results results={results} />
     </div>
   );
 }
