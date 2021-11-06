@@ -1,3 +1,17 @@
-.SearchEngine {
-  background: lightgoldenrodyellow;
+.SearchEngine input {
+  width: 75%;
+  padding: 8px;
+  border: 1px solid #ddd;
+  color: #333;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.SearchEngine form {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 20px 0;
+  line-height: 1.5;
 }

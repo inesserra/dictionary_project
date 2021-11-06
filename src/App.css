@@ -1,19 +1,23 @@
 .App {
-  max-width: 700px;
+  max-width: 650px;
   display: block;
   padding: 20px;
   margin: 20px auto;
   text-align: center;
-  background: lightgoldenrodyellow;
+  background-color: #f9f8fe;
+}
+.App .Logo {
+  max-width: 100px;
+  display: block;
+  margin: 0 auto;
 }
 
 .App footer {
   text-align: center;
-
   margin: 30px 0;
+  font-size: 12px;
 }
 .App header {
   text-align: center;
-
-  margin: 30px 0 30px;
+  margin: 10px 0 10px;
 }

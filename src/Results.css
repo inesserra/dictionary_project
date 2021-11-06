@@ -1,0 +1,10 @@
+.Results {
+  text-align: left;
+}
+.Results section {
+  background: white;
+  border-radius: 4px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin: 0px 0;
+}

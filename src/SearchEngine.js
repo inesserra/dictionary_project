@@ -28,13 +28,7 @@ export default function SearchEngine() {
   return (
     <div className="SearchEngine">
       <form onSubmit={handleSubmit}>
-        <input
-          type="search"
-          placeholder="Enter your word"
-          autoFocus={true}
-          onChange={updateWord}
-        />
-        <input type="submit" value="search" className="btn btn-primary w-30" />
+        <input type="search" placeholder="Enter a word" onChange={updateWord} />
       </form>
       <Results results={results} />
     </div>
