@@ -1,6 +1,7 @@
 import React from "react";
 import Meaning from "./Meaning";
 import Phonetics from "./Phonetics";
+import Images from "./Images";
 import "./Results.css";
 
 export default function Result(props) {
@@ -25,6 +26,9 @@ export default function Result(props) {
             </section>
           );
         })}
+        <div>
+          <Images imageData={props.imageData} />
+        </div>
       </div>
     );
   } else {
